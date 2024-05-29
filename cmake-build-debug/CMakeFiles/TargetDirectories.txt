@@ -1,0 +1,3 @@
+C:/Users/tymka/Documents/Studia programowanie/calendar/cmake-build-debug/CMakeFiles/calendar.dir
+C:/Users/tymka/Documents/Studia programowanie/calendar/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/tymka/Documents/Studia programowanie/calendar/cmake-build-debug/CMakeFiles/rebuild_cache.dir
