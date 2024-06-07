@@ -62,7 +62,7 @@ CMAKE_BINARY_DIR = C:\Users\pc\Documents\GitHub\CalendarApp\build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/calendar.dir/all
+all: CMakeFiles/CalendarApp.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -70,34 +70,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/calendar.dir/clean
+clean: CMakeFiles/CalendarApp.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/calendar.dir
+# Target rules for target CMakeFiles/CalendarApp.dir
 
 # All Build rule for target.
-CMakeFiles/calendar.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\calendar.dir\build.make CMakeFiles/calendar.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\calendar.dir\build.make CMakeFiles/calendar.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\pc\Documents\GitHub\CalendarApp\build\CMakeFiles --progress-num=1,2 "Built target calendar"
-.PHONY : CMakeFiles/calendar.dir/all
+CMakeFiles/CalendarApp.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CalendarApp.dir\build.make CMakeFiles/CalendarApp.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CalendarApp.dir\build.make CMakeFiles/CalendarApp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\pc\Documents\GitHub\CalendarApp\build\CMakeFiles --progress-num=1,2,3,4,5 "Built target CalendarApp"
+.PHONY : CMakeFiles/CalendarApp.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/calendar.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\pc\Documents\GitHub\CalendarApp\build\CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/calendar.dir/all
+CMakeFiles/CalendarApp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\pc\Documents\GitHub\CalendarApp\build\CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/CalendarApp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\pc\Documents\GitHub\CalendarApp\build\CMakeFiles 0
-.PHONY : CMakeFiles/calendar.dir/rule
+.PHONY : CMakeFiles/CalendarApp.dir/rule
 
 # Convenience name for target.
-calendar: CMakeFiles/calendar.dir/rule
-.PHONY : calendar
+CalendarApp: CMakeFiles/CalendarApp.dir/rule
+.PHONY : CalendarApp
 
 # clean rule for target.
-CMakeFiles/calendar.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\calendar.dir\build.make CMakeFiles/calendar.dir/clean
-.PHONY : CMakeFiles/calendar.dir/clean
+CMakeFiles/CalendarApp.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CalendarApp.dir\build.make CMakeFiles/CalendarApp.dir/clean
+.PHONY : CMakeFiles/CalendarApp.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

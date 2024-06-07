@@ -1,0 +1,3 @@
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E rm -f CMakeFiles\CalendarApp.dir/objects.a
+C:\msys64\ucrt64\bin\ar.exe qc CMakeFiles\CalendarApp.dir/objects.a @CMakeFiles\CalendarApp.dir\objects1.rsp
+C:\msys64\ucrt64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\CalendarApp.dir/objects.a -Wl,--no-whole-archive -o CalendarApp.exe -Wl,--out-implib,libCalendarApp.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\CalendarApp.dir\linkLibs.rsp

@@ -116,41 +116,113 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named calendar
+# Target rules for targets named CalendarApp
 
 # Build rule for target.
-calendar: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 calendar
-.PHONY : calendar
+CalendarApp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CalendarApp
+.PHONY : CalendarApp
 
 # fast build rule for target.
-calendar/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\calendar.dir\build.make CMakeFiles/calendar.dir/build
-.PHONY : calendar/fast
+CalendarApp/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CalendarApp.dir\build.make CMakeFiles/CalendarApp.dir/build
+.PHONY : CalendarApp/fast
 
-main.obj: main.cpp.obj
-.PHONY : main.obj
+source/DateFile.obj: source/DateFile.cpp.obj
+.PHONY : source/DateFile.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\calendar.dir\build.make CMakeFiles/calendar.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+source/DateFile.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CalendarApp.dir\build.make CMakeFiles/CalendarApp.dir/source/DateFile.cpp.obj
+.PHONY : source/DateFile.cpp.obj
 
-main.i: main.cpp.i
-.PHONY : main.i
+source/DateFile.i: source/DateFile.cpp.i
+.PHONY : source/DateFile.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\calendar.dir\build.make CMakeFiles/calendar.dir/main.cpp.i
-.PHONY : main.cpp.i
+source/DateFile.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CalendarApp.dir\build.make CMakeFiles/CalendarApp.dir/source/DateFile.cpp.i
+.PHONY : source/DateFile.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+source/DateFile.s: source/DateFile.cpp.s
+.PHONY : source/DateFile.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\calendar.dir\build.make CMakeFiles/calendar.dir/main.cpp.s
-.PHONY : main.cpp.s
+source/DateFile.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CalendarApp.dir\build.make CMakeFiles/CalendarApp.dir/source/DateFile.cpp.s
+.PHONY : source/DateFile.cpp.s
+
+source/Event.obj: source/Event.cpp.obj
+.PHONY : source/Event.obj
+
+# target to build an object file
+source/Event.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CalendarApp.dir\build.make CMakeFiles/CalendarApp.dir/source/Event.cpp.obj
+.PHONY : source/Event.cpp.obj
+
+source/Event.i: source/Event.cpp.i
+.PHONY : source/Event.i
+
+# target to preprocess a source file
+source/Event.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CalendarApp.dir\build.make CMakeFiles/CalendarApp.dir/source/Event.cpp.i
+.PHONY : source/Event.cpp.i
+
+source/Event.s: source/Event.cpp.s
+.PHONY : source/Event.s
+
+# target to generate assembly for a file
+source/Event.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CalendarApp.dir\build.make CMakeFiles/CalendarApp.dir/source/Event.cpp.s
+.PHONY : source/Event.cpp.s
+
+source/FileHandler.obj: source/FileHandler.cpp.obj
+.PHONY : source/FileHandler.obj
+
+# target to build an object file
+source/FileHandler.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CalendarApp.dir\build.make CMakeFiles/CalendarApp.dir/source/FileHandler.cpp.obj
+.PHONY : source/FileHandler.cpp.obj
+
+source/FileHandler.i: source/FileHandler.cpp.i
+.PHONY : source/FileHandler.i
+
+# target to preprocess a source file
+source/FileHandler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CalendarApp.dir\build.make CMakeFiles/CalendarApp.dir/source/FileHandler.cpp.i
+.PHONY : source/FileHandler.cpp.i
+
+source/FileHandler.s: source/FileHandler.cpp.s
+.PHONY : source/FileHandler.s
+
+# target to generate assembly for a file
+source/FileHandler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CalendarApp.dir\build.make CMakeFiles/CalendarApp.dir/source/FileHandler.cpp.s
+.PHONY : source/FileHandler.cpp.s
+
+source/main.obj: source/main.cpp.obj
+.PHONY : source/main.obj
+
+# target to build an object file
+source/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CalendarApp.dir\build.make CMakeFiles/CalendarApp.dir/source/main.cpp.obj
+.PHONY : source/main.cpp.obj
+
+source/main.i: source/main.cpp.i
+.PHONY : source/main.i
+
+# target to preprocess a source file
+source/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CalendarApp.dir\build.make CMakeFiles/CalendarApp.dir/source/main.cpp.i
+.PHONY : source/main.cpp.i
+
+source/main.s: source/main.cpp.s
+.PHONY : source/main.s
+
+# target to generate assembly for a file
+source/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CalendarApp.dir\build.make CMakeFiles/CalendarApp.dir/source/main.cpp.s
+.PHONY : source/main.cpp.s
 
 # Help Target
 help:
@@ -160,10 +232,19 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... calendar
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... CalendarApp
+	@echo ... source/DateFile.obj
+	@echo ... source/DateFile.i
+	@echo ... source/DateFile.s
+	@echo ... source/Event.obj
+	@echo ... source/Event.i
+	@echo ... source/Event.s
+	@echo ... source/FileHandler.obj
+	@echo ... source/FileHandler.i
+	@echo ... source/FileHandler.s
+	@echo ... source/main.obj
+	@echo ... source/main.i
+	@echo ... source/main.s
 .PHONY : help
 
 

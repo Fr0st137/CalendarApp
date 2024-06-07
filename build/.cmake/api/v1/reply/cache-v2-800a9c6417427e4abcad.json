@@ -659,7 +659,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Program Files (x86)/calendar"
+			"value" : "C:/Program Files (x86)/CalendarApp"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -879,7 +879,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "calendar"
+			"value" : "CalendarApp"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1274,19 +1274,7 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "linker supports push/pop state"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "TRUE"
-		},
-		{
-			"name" : "calendar_BINARY_DIR",
+			"name" : "CalendarApp_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1298,7 +1286,7 @@
 			"value" : "C:/Users/pc/Documents/GitHub/CalendarApp/build"
 		},
 		{
-			"name" : "calendar_IS_TOP_LEVEL",
+			"name" : "CalendarApp_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1310,7 +1298,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "calendar_SOURCE_DIR",
+			"name" : "CalendarApp_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1320,6 +1308,18 @@
 			],
 			"type" : "STATIC",
 			"value" : "C:/Users/pc/Documents/GitHub/CalendarApp"
+		},
+		{
+			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "linker supports push/pop state"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "TRUE"
 		}
 	],
 	"kind" : "cache",

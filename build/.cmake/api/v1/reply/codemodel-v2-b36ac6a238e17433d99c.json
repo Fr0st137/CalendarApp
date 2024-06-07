@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "calendar",
+					"name" : "CalendarApp",
 					"targetIndexes" : 
 					[
 						0
@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "calendar::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-calendar-Debug-26d9b75c393bb001cf51.json",
-					"name" : "calendar",
+					"id" : "CalendarApp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CalendarApp-Debug-7e2b5dcc3d46a8c65b5a.json",
+					"name" : "CalendarApp",
 					"projectIndex" : 0
 				}
 			]
