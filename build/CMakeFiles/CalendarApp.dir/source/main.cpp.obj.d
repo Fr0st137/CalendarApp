@@ -188,4 +188,13 @@ CMakeFiles/CalendarApp.dir/source/main.cpp.obj: \
  C:/msys64/ucrt64/include/c++/13.2.0/span \
  C:/msys64/ucrt64/include/c++/13.2.0/variant \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/ranges_algobase.h \
- C:\Users\pc\Documents\GitHub\CalendarApp\source\DateFile.cpp
+ C:\Users\pc\Documents\GitHub\CalendarApp\source\DateFile.cpp \
+ C:/Users/pc/Documents/GitHub/CalendarApp/header/DateFile.h \
+ C:\Users\pc\Documents\GitHub\CalendarApp\source\FileHandler.cpp \
+ C:/Users/pc/Documents/GitHub/CalendarApp/header/FileHandler.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/fstream \
+ C:/msys64/ucrt64/include/c++/13.2.0/x86_64-w64-mingw32/bits/basic_file.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/x86_64-w64-mingw32/bits/c++io.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/fstream.tcc \
+ C:/Users/pc/Documents/GitHub/CalendarApp/header/Holidays.h \
+ C:/Users/pc/Documents/GitHub/CalendarApp/header/Event.h

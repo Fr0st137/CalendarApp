@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/pc/Documents/GitHub/CalendarApp/source/DateFile.cpp" "CMakeFiles/CalendarApp.dir/source/DateFile.cpp.obj" "gcc" "CMakeFiles/CalendarApp.dir/source/DateFile.cpp.obj.d"
   "C:/Users/pc/Documents/GitHub/CalendarApp/source/Event.cpp" "CMakeFiles/CalendarApp.dir/source/Event.cpp.obj" "gcc" "CMakeFiles/CalendarApp.dir/source/Event.cpp.obj.d"
   "C:/Users/pc/Documents/GitHub/CalendarApp/source/FileHandler.cpp" "CMakeFiles/CalendarApp.dir/source/FileHandler.cpp.obj" "gcc" "CMakeFiles/CalendarApp.dir/source/FileHandler.cpp.obj.d"
+  "C:/Users/pc/Documents/GitHub/CalendarApp/source/Holidays.cpp" "CMakeFiles/CalendarApp.dir/source/Holidays.cpp.obj" "gcc" "CMakeFiles/CalendarApp.dir/source/Holidays.cpp.obj.d"
   "C:/Users/pc/Documents/GitHub/CalendarApp/source/main.cpp" "CMakeFiles/CalendarApp.dir/source/main.cpp.obj" "gcc" "CMakeFiles/CalendarApp.dir/source/main.cpp.obj.d"
   )
 

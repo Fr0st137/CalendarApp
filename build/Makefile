@@ -200,6 +200,30 @@ source/FileHandler.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CalendarApp.dir\build.make CMakeFiles/CalendarApp.dir/source/FileHandler.cpp.s
 .PHONY : source/FileHandler.cpp.s
 
+source/Holidays.obj: source/Holidays.cpp.obj
+.PHONY : source/Holidays.obj
+
+# target to build an object file
+source/Holidays.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CalendarApp.dir\build.make CMakeFiles/CalendarApp.dir/source/Holidays.cpp.obj
+.PHONY : source/Holidays.cpp.obj
+
+source/Holidays.i: source/Holidays.cpp.i
+.PHONY : source/Holidays.i
+
+# target to preprocess a source file
+source/Holidays.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CalendarApp.dir\build.make CMakeFiles/CalendarApp.dir/source/Holidays.cpp.i
+.PHONY : source/Holidays.cpp.i
+
+source/Holidays.s: source/Holidays.cpp.s
+.PHONY : source/Holidays.s
+
+# target to generate assembly for a file
+source/Holidays.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CalendarApp.dir\build.make CMakeFiles/CalendarApp.dir/source/Holidays.cpp.s
+.PHONY : source/Holidays.cpp.s
+
 source/main.obj: source/main.cpp.obj
 .PHONY : source/main.obj
 
@@ -242,6 +266,9 @@ help:
 	@echo ... source/FileHandler.obj
 	@echo ... source/FileHandler.i
 	@echo ... source/FileHandler.s
+	@echo ... source/Holidays.obj
+	@echo ... source/Holidays.i
+	@echo ... source/Holidays.s
 	@echo ... source/main.obj
 	@echo ... source/main.i
 	@echo ... source/main.s

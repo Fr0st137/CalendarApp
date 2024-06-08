@@ -1,6 +1,7 @@
 #include <iostream>
 #include <chrono>
 #include <ctime>
+
 #include "DateFile.cpp"
 #include "FileHandler.cpp"
 
@@ -20,15 +21,7 @@ int menu(int choice = 0) {
 
 
 int main(){
-
-
-    for (const FileEntry& entry : data) {
-    std::cout << entry.index << "\t" 
-              << entry.name << "\t" 
-              << entry.date << "\t"
-              << entry.hours << "\t"
-              << entry.optionalDescription << std::endl;
-}
+    
     while(true)
     {
         switch (menu())
