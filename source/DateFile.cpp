@@ -1,85 +1,43 @@
-#include <iostream>
-#include <chrono>
-#include <ctime>
 #include "../header/DateFile.h"
+#include <sstream>
+#include <iomanip>
+#include <ctime>
 
-using namespace std;
-    // Get current time
-    auto now = std::chrono::system_clock::now();
-    std::time_t timeNow = std::chrono::system_clock::to_time_t(now);
+int currYear = 1900; 
+int currMonth = 1;
+int currDay = 1;
 
-    // Convert to local time
-    tm* localTime = std::localtime(&timeNow);
-
-    // Extract year, month, and day
-    int currYear = 1900 + localTime->tm_year;
-    int currMonth = 1 + localTime->tm_mon;  
-    int currDay = localTime->tm_mday;
-
-    // // Print the current date
-    // std::cout << "Today is: " << day << "." << month << "." << year << std::endl;
-
-string monthName(int i)
-{
-	switch (i)
-	{
-	case 1:
-		return "January";
-		break;
-
-	case 2:
-		return "February";
-		break;
-
-	case 3:
-		return "March";
-		break;
-
-	case 4:
-		return "April";
-		break;
-
-	case 5:
-		return "May";
-		break;
-
-	case 6:
-		return "June";
-		break;
-
-	case 7:
-		return "July";
-		break;
-
-	case 8:
-		return "August";
-		break;
-
-	case 9:
-		return "September";
-		break;
-
-	case 10:
-		return "October";
-		break;
-
-	case 11:
-		return "November";
-		break;
-
-	case 12:
-		return "December";
-		break;
-
-	default:
-		return "";
-		break;
-	}
+// Constructor with default values for current date
+Date::Date(int year, int month, int day) {
+    time_t now = time(0);
+    tm* localTime = localtime(&now);
+    if (year == 1900) {
+        this->year = 1900 + localTime->tm_year;
+    } else {
+        this->year = year;
+    }
+    if (month == 1) {
+        this->month = 1 + localTime->tm_mon;
+    } else {
+        this->month = month;
+    }
+    if (day == 1) {
+        this->day = localTime->tm_mday;
+    } else {
+        this->day = day;
+    }
 }
 
+// ... (implementations of getters, setters, isValid, daysUntil, etc.)
 
-// Helper function to parse a date string of format "m/d/yyyy" (add to Date class)
+// Static method to get the current date
+Date Date::getCurrentDate() {
+    time_t now = time(0);
+    tm* localTime = localtime(&now);
+    return Date(1900 + localTime->tm_year, 1 + localTime->tm_mon, localTime->tm_mday);
+}
 
+// Static method to parse a date string
 Date Date::fromString(const std::string& dateStr) {
     std::istringstream iss(dateStr);
     std::string monthStr, dayStr, yearStr;
@@ -95,9 +53,12 @@ Date Date::fromString(const std::string& dateStr) {
     return Date(year, month, day);
 }
 
+// toString method
 std::string Date::toString() const {
     std::ostringstream oss;
     oss << std::setfill('0') << std::setw(2) << month << "/"
         << std::setw(2) << day << "/" << year;
     return oss.str();
 }
+
+// ... (implementation of isLeapYear)

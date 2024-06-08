@@ -1,28 +1,36 @@
-#ifndef DATEFILE_H // Unique identifier for your header
+#ifndef DATEFILE_H
 #define DATEFILE_H
 
 #include <string>
-#include <iostream>
 #include <sstream>
 #include <stdexcept>
+#include <ctime> // for time functions
+
 
 class Date {
 public:
-    Date(int year, int month, int day);
-
-    // Getters 
+    Date(int year = 1900, int month = 1, int day = 1);
     int getYear() const { return year; }
     int getMonth() const { return month; }
     int getDay() const { return day; }
-
-    // ... (other methods, like operators, isValid(), etc.)
-
-    // fromString method to parse date from a string
-    static Date fromString(const std::string& dateStr);  // Declaration ONLY
-    std::string toString() const;  // Declaration of toString() method
+    void setYear(int year);
+    void setMonth(int month);
+    void setDay(int day);
+    bool operator<(const Date& other) const;
+    bool isValid() const;
+    int daysUntil(const Date& other) const;
+    std::string toString() const;
+    static Date getCurrentDate();
+    static Date fromString(const std::string& dateStr);
 private:
-    int year, month, day;
+    int year;
+    int month;
+    int day;
+    bool isLeapYear(int year) const;
 };
 
+extern int currYear;
+extern int currMonth;
+extern int currDay;
 
 #endif // DATEFILE_H

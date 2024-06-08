@@ -10,9 +10,9 @@
 #include "Holidays.h"
 #include "Event.h"
 
-    int currYear;
-    int currMonth;  
-    int currDay;
+    extern int currYear;
+    extern int currMonth;  
+    extern int currDay;
 
 class FileHandler {
 public:

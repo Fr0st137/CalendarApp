@@ -1,8 +1,8 @@
+// source/main.cpp
 #include <iostream>
 #include <chrono>
 #include <ctime>
 #include <iomanip>
-
 #include "../header/DateFile.h"
 #include "../header/Event.h"
 #include "../header/Holidays.h"
@@ -11,80 +11,68 @@
 
 using namespace std;
 
-int menu(int choice = 0) {
-    // Get current time
-    system("CLS");
-            cout << "Calendar" << endl;
-            cout <<"Today is: "<< currDay << "." << currMonth << "." << currYear << endl;
-            cout << "Enter a number between 1 and 6 to choose what do u want to do" << endl;
-            cin >> choice;
-
-    return choice;
+void displayMenu() {
+    cout << "Calendar" << endl;
+    Date currentDate = Date::getCurrentDate();
+    cout << "Today is: " << currentDate.getDay() << "." << currentDate.getMonth() << "." << currentDate.getYear() << endl;
+    cout << "Enter a number between 1 and 7 to choose what you want to do:" << endl;
+    cout << "1. Display calendar" << endl;
+    cout << "2. Add event" << endl;
+    cout << "3. Add holiday" << endl;
+    cout << "4. Show events" << endl;
+    cout << "5. Show holidays" << endl;
+    cout << "6. Show info" << endl;
+    cout << "7. Exit" << endl;
 }
 
-
-
-int main(){
-
-
-    FileHandler handler("../EventLog.csv"); 
-    std::vector<Event> events = handler.readEvents();
-
-    if (events.empty()) {
-        std::cerr << "No events found in the file." << std::endl;
-        return 1; // Indicate an error
-    }
-
-    std::cout << std::setw(12) << "Start Date" << std::setw(12) << "End Date" 
-              << std::setw(12) << "Start Time" << std::setw(12) << "End Time"
-              << std::setw(20) << "Subject" << std::endl;
+int main() {
+    FileHandler handler("../EventLog.csv"); // locatino of file with events 
+    vector<Event> events = handler.readEvents();
+    Calendar calendar;
 
     for (const Event& event : events) {
-        std::cout << std::setw(12) << event.toString()       // Assuming you have a toString method in Date
-                  << std::setw(12) << event.getEndTime()   
-                  << std::setw(12) << event.getStartTime() 
-                  << std::setw(12) << event.getEndTime()
-                  << std::setw(20) << event.getSubject() << std::endl;
+        calendar.addEvent(event);
     }
 
+    bool exit = false;
+    while (!exit) {
+        displayMenu();
+        int choice;
+        cin >> choice;
 
+        switch (choice) {
+            case 1:
+                calendar.printCurrentMonth();
+                break;
+            case 2:
+                cout << "add event" << endl;
+                // Add logic to add event
+                break;
+            case 3:
+                cout << "add holiday" << endl;
+                // Add logic to add holiday
+                break;
+            case 4:
+                cout << "show events" << endl;
+                // Add logic to show events
+                break;
+            case 5:
+                cout << "show holidays" << endl;
+                // Add logic to show holidays
+                break;
+            case 6:
+                cout << "show info" << endl;
+                // Add logic to show info
+                break;
+            case 7:
+                cout << "Exit" << endl;
+                exit = true;
+                break;
+            default:
+                cout << "number out of range" << endl;
+                break;
+        }
+    }
 
-    // while(true)
-    // {
-    //     switch (menu())
-    //     {
-    //     case 1:
-    //         cout << "display calendar" << endl;
-    //         break;
-        
-    //     case 2:
-    //         cout << "add event" << endl;
-    //         break;
-        
-    //     case 3:
-    //         cout << "add event" << endl;
-    //         break;
-
-    //     case 4:
-    //         cout << "show events" << endl;
-    //         break;
-
-    //     case 5:
-    //         cout << "show holidays" << endl;
-    //         break;
-
-    //     case 6:
-    //         cout << "show info" << endl;
-    //         break;
-
-    //     case 7:
-    //         cout << "Exit" << endl;
-    //         return 0;
-    //         break;
-        
-    //     default:
-    //         cout << "number out of range" << endl;
-    //         break;
-    //     }
-    // }
+    return 0;
 }

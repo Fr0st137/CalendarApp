@@ -5,13 +5,14 @@ Event::Event(const std::string& subject, int year, int month, int day,
     : Date(year, month, day), subject(subject), startTime(startTime), endTime(endTime) {}
 
 // ... other Event member function definitions
-std::string Event::getSubject() const {
-    return subject;
+std::string Event::getEndTime() const {
+    return endTime;
 }
-std::string Event::getStartTime() const { // Getters for startTime and endTime
+
+std::string Event::getStartTime() const {
     return startTime;
 }
 
-std::string Event::getEndTime() const {
-    return endTime;
+std::string Event::getSubject() const {
+    return subject;
 }
