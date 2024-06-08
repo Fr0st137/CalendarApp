@@ -68,10 +68,24 @@ include CMakeFiles/CalendarApp.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/CalendarApp.dir/flags.make
 
+CMakeFiles/CalendarApp.dir/source/Calendar.cpp.obj: CMakeFiles/CalendarApp.dir/flags.make
+CMakeFiles/CalendarApp.dir/source/Calendar.cpp.obj: C:/Users/pc/Documents/GitHub/CalendarApp/source/Calendar.cpp
+CMakeFiles/CalendarApp.dir/source/Calendar.cpp.obj: CMakeFiles/CalendarApp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pc\Documents\GitHub\CalendarApp\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CalendarApp.dir/source/Calendar.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CalendarApp.dir/source/Calendar.cpp.obj -MF CMakeFiles\CalendarApp.dir\source\Calendar.cpp.obj.d -o CMakeFiles\CalendarApp.dir\source\Calendar.cpp.obj -c C:\Users\pc\Documents\GitHub\CalendarApp\source\Calendar.cpp
+
+CMakeFiles/CalendarApp.dir/source/Calendar.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CalendarApp.dir/source/Calendar.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\pc\Documents\GitHub\CalendarApp\source\Calendar.cpp > CMakeFiles\CalendarApp.dir\source\Calendar.cpp.i
+
+CMakeFiles/CalendarApp.dir/source/Calendar.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CalendarApp.dir/source/Calendar.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\pc\Documents\GitHub\CalendarApp\source\Calendar.cpp -o CMakeFiles\CalendarApp.dir\source\Calendar.cpp.s
+
 CMakeFiles/CalendarApp.dir/source/DateFile.cpp.obj: CMakeFiles/CalendarApp.dir/flags.make
 CMakeFiles/CalendarApp.dir/source/DateFile.cpp.obj: C:/Users/pc/Documents/GitHub/CalendarApp/source/DateFile.cpp
 CMakeFiles/CalendarApp.dir/source/DateFile.cpp.obj: CMakeFiles/CalendarApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pc\Documents\GitHub\CalendarApp\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CalendarApp.dir/source/DateFile.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pc\Documents\GitHub\CalendarApp\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CalendarApp.dir/source/DateFile.cpp.obj"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CalendarApp.dir/source/DateFile.cpp.obj -MF CMakeFiles\CalendarApp.dir\source\DateFile.cpp.obj.d -o CMakeFiles\CalendarApp.dir\source\DateFile.cpp.obj -c C:\Users\pc\Documents\GitHub\CalendarApp\source\DateFile.cpp
 
 CMakeFiles/CalendarApp.dir/source/DateFile.cpp.i: cmake_force
@@ -85,7 +99,7 @@ CMakeFiles/CalendarApp.dir/source/DateFile.cpp.s: cmake_force
 CMakeFiles/CalendarApp.dir/source/Event.cpp.obj: CMakeFiles/CalendarApp.dir/flags.make
 CMakeFiles/CalendarApp.dir/source/Event.cpp.obj: C:/Users/pc/Documents/GitHub/CalendarApp/source/Event.cpp
 CMakeFiles/CalendarApp.dir/source/Event.cpp.obj: CMakeFiles/CalendarApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pc\Documents\GitHub\CalendarApp\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CalendarApp.dir/source/Event.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pc\Documents\GitHub\CalendarApp\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CalendarApp.dir/source/Event.cpp.obj"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CalendarApp.dir/source/Event.cpp.obj -MF CMakeFiles\CalendarApp.dir\source\Event.cpp.obj.d -o CMakeFiles\CalendarApp.dir\source\Event.cpp.obj -c C:\Users\pc\Documents\GitHub\CalendarApp\source\Event.cpp
 
 CMakeFiles/CalendarApp.dir/source/Event.cpp.i: cmake_force
@@ -99,7 +113,7 @@ CMakeFiles/CalendarApp.dir/source/Event.cpp.s: cmake_force
 CMakeFiles/CalendarApp.dir/source/FileHandler.cpp.obj: CMakeFiles/CalendarApp.dir/flags.make
 CMakeFiles/CalendarApp.dir/source/FileHandler.cpp.obj: C:/Users/pc/Documents/GitHub/CalendarApp/source/FileHandler.cpp
 CMakeFiles/CalendarApp.dir/source/FileHandler.cpp.obj: CMakeFiles/CalendarApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pc\Documents\GitHub\CalendarApp\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CalendarApp.dir/source/FileHandler.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pc\Documents\GitHub\CalendarApp\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CalendarApp.dir/source/FileHandler.cpp.obj"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CalendarApp.dir/source/FileHandler.cpp.obj -MF CMakeFiles\CalendarApp.dir\source\FileHandler.cpp.obj.d -o CMakeFiles\CalendarApp.dir\source\FileHandler.cpp.obj -c C:\Users\pc\Documents\GitHub\CalendarApp\source\FileHandler.cpp
 
 CMakeFiles/CalendarApp.dir/source/FileHandler.cpp.i: cmake_force
@@ -113,7 +127,7 @@ CMakeFiles/CalendarApp.dir/source/FileHandler.cpp.s: cmake_force
 CMakeFiles/CalendarApp.dir/source/Holidays.cpp.obj: CMakeFiles/CalendarApp.dir/flags.make
 CMakeFiles/CalendarApp.dir/source/Holidays.cpp.obj: C:/Users/pc/Documents/GitHub/CalendarApp/source/Holidays.cpp
 CMakeFiles/CalendarApp.dir/source/Holidays.cpp.obj: CMakeFiles/CalendarApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pc\Documents\GitHub\CalendarApp\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CalendarApp.dir/source/Holidays.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pc\Documents\GitHub\CalendarApp\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/CalendarApp.dir/source/Holidays.cpp.obj"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CalendarApp.dir/source/Holidays.cpp.obj -MF CMakeFiles\CalendarApp.dir\source\Holidays.cpp.obj.d -o CMakeFiles\CalendarApp.dir\source\Holidays.cpp.obj -c C:\Users\pc\Documents\GitHub\CalendarApp\source\Holidays.cpp
 
 CMakeFiles/CalendarApp.dir/source/Holidays.cpp.i: cmake_force
@@ -127,7 +141,7 @@ CMakeFiles/CalendarApp.dir/source/Holidays.cpp.s: cmake_force
 CMakeFiles/CalendarApp.dir/source/main.cpp.obj: CMakeFiles/CalendarApp.dir/flags.make
 CMakeFiles/CalendarApp.dir/source/main.cpp.obj: C:/Users/pc/Documents/GitHub/CalendarApp/source/main.cpp
 CMakeFiles/CalendarApp.dir/source/main.cpp.obj: CMakeFiles/CalendarApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pc\Documents\GitHub\CalendarApp\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/CalendarApp.dir/source/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pc\Documents\GitHub\CalendarApp\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/CalendarApp.dir/source/main.cpp.obj"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CalendarApp.dir/source/main.cpp.obj -MF CMakeFiles\CalendarApp.dir\source\main.cpp.obj.d -o CMakeFiles\CalendarApp.dir\source\main.cpp.obj -c C:\Users\pc\Documents\GitHub\CalendarApp\source\main.cpp
 
 CMakeFiles/CalendarApp.dir/source/main.cpp.i: cmake_force
@@ -140,6 +154,7 @@ CMakeFiles/CalendarApp.dir/source/main.cpp.s: cmake_force
 
 # Object files for target CalendarApp
 CalendarApp_OBJECTS = \
+"CMakeFiles/CalendarApp.dir/source/Calendar.cpp.obj" \
 "CMakeFiles/CalendarApp.dir/source/DateFile.cpp.obj" \
 "CMakeFiles/CalendarApp.dir/source/Event.cpp.obj" \
 "CMakeFiles/CalendarApp.dir/source/FileHandler.cpp.obj" \
@@ -149,6 +164,7 @@ CalendarApp_OBJECTS = \
 # External object files for target CalendarApp
 CalendarApp_EXTERNAL_OBJECTS =
 
+CalendarApp.exe: CMakeFiles/CalendarApp.dir/source/Calendar.cpp.obj
 CalendarApp.exe: CMakeFiles/CalendarApp.dir/source/DateFile.cpp.obj
 CalendarApp.exe: CMakeFiles/CalendarApp.dir/source/Event.cpp.obj
 CalendarApp.exe: CMakeFiles/CalendarApp.dir/source/FileHandler.cpp.obj
@@ -158,7 +174,7 @@ CalendarApp.exe: CMakeFiles/CalendarApp.dir/build.make
 CalendarApp.exe: CMakeFiles/CalendarApp.dir/linkLibs.rsp
 CalendarApp.exe: CMakeFiles/CalendarApp.dir/objects1.rsp
 CalendarApp.exe: CMakeFiles/CalendarApp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\pc\Documents\GitHub\CalendarApp\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable CalendarApp.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\pc\Documents\GitHub\CalendarApp\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable CalendarApp.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\CalendarApp.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

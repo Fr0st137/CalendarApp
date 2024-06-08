@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/pc/Documents/GitHub/CalendarApp/source/Calendar.cpp" "CMakeFiles/CalendarApp.dir/source/Calendar.cpp.obj" "gcc" "CMakeFiles/CalendarApp.dir/source/Calendar.cpp.obj.d"
   "C:/Users/pc/Documents/GitHub/CalendarApp/source/DateFile.cpp" "CMakeFiles/CalendarApp.dir/source/DateFile.cpp.obj" "gcc" "CMakeFiles/CalendarApp.dir/source/DateFile.cpp.obj.d"
   "C:/Users/pc/Documents/GitHub/CalendarApp/source/Event.cpp" "CMakeFiles/CalendarApp.dir/source/Event.cpp.obj" "gcc" "CMakeFiles/CalendarApp.dir/source/Event.cpp.obj.d"
   "C:/Users/pc/Documents/GitHub/CalendarApp/source/FileHandler.cpp" "CMakeFiles/CalendarApp.dir/source/FileHandler.cpp.obj" "gcc" "CMakeFiles/CalendarApp.dir/source/FileHandler.cpp.obj.d"

@@ -1,30 +1,28 @@
-#pragma once
+#ifndef DATEFILE_H // Unique identifier for your header
+#define DATEFILE_H
 
 #include <string>
 #include <iostream>
-
-using namespace std;
+#include <sstream>
+#include <stdexcept>
 
 class Date {
 public:
     Date(int year, int month, int day);
 
-    // Getters and setters (consider adding validation here)
-    int getYear() const;
-    void setYear(int year);
-    // ... similar for month and day
+    // Getters 
+    int getYear() const { return year; }
+    int getMonth() const { return month; }
+    int getDay() const { return day; }
 
-    // Comparison operators (>, <, ==, etc.)
-    bool operator<(const Date& other) const;
-    // ...
+    // ... (other methods, like operators, isValid(), etc.)
 
-    // Other potential methods:
-    bool isValid() const; // Check if date is valid
-    int daysUntil(const Date& other) const; // Calculate days between dates
-    std::string toString() const; // Format the date as a string
-
+    // fromString method to parse date from a string
+    static Date fromString(const std::string& dateStr);  // Declaration ONLY
+    std::string toString() const;  // Declaration of toString() method
 private:
     int year, month, day;
 };
 
-string monthName(int i);
+
+#endif // DATEFILE_H

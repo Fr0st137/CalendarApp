@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/CalendarApp.dir/source/Calendar.cpp.obj"
+  "CMakeFiles/CalendarApp.dir/source/Calendar.cpp.obj.d"
   "CMakeFiles/CalendarApp.dir/source/DateFile.cpp.obj"
   "CMakeFiles/CalendarApp.dir/source/DateFile.cpp.obj.d"
   "CMakeFiles/CalendarApp.dir/source/Event.cpp.obj"

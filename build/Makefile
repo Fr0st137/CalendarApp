@@ -128,6 +128,30 @@ CalendarApp/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CalendarApp.dir\build.make CMakeFiles/CalendarApp.dir/build
 .PHONY : CalendarApp/fast
 
+source/Calendar.obj: source/Calendar.cpp.obj
+.PHONY : source/Calendar.obj
+
+# target to build an object file
+source/Calendar.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CalendarApp.dir\build.make CMakeFiles/CalendarApp.dir/source/Calendar.cpp.obj
+.PHONY : source/Calendar.cpp.obj
+
+source/Calendar.i: source/Calendar.cpp.i
+.PHONY : source/Calendar.i
+
+# target to preprocess a source file
+source/Calendar.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CalendarApp.dir\build.make CMakeFiles/CalendarApp.dir/source/Calendar.cpp.i
+.PHONY : source/Calendar.cpp.i
+
+source/Calendar.s: source/Calendar.cpp.s
+.PHONY : source/Calendar.s
+
+# target to generate assembly for a file
+source/Calendar.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CalendarApp.dir\build.make CMakeFiles/CalendarApp.dir/source/Calendar.cpp.s
+.PHONY : source/Calendar.cpp.s
+
 source/DateFile.obj: source/DateFile.cpp.obj
 .PHONY : source/DateFile.obj
 
@@ -257,6 +281,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... CalendarApp
+	@echo ... source/Calendar.obj
+	@echo ... source/Calendar.i
+	@echo ... source/Calendar.s
 	@echo ... source/DateFile.obj
 	@echo ... source/DateFile.i
 	@echo ... source/DateFile.s

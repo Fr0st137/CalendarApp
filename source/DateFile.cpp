@@ -76,3 +76,28 @@ string monthName(int i)
 		break;
 	}
 }
+
+
+// Helper function to parse a date string of format "m/d/yyyy" (add to Date class)
+
+Date Date::fromString(const std::string& dateStr) {
+    std::istringstream iss(dateStr);
+    std::string monthStr, dayStr, yearStr;
+
+    std::getline(iss, monthStr, '/');
+    std::getline(iss, dayStr, '/');
+    std::getline(iss, yearStr, '/');
+
+    int month = std::stoi(monthStr);
+    int day = std::stoi(dayStr);
+    int year = std::stoi(yearStr);
+
+    return Date(year, month, day);
+}
+
+std::string Date::toString() const {
+    std::ostringstream oss;
+    oss << std::setfill('0') << std::setw(2) << month << "/"
+        << std::setw(2) << day << "/" << year;
+    return oss.str();
+}

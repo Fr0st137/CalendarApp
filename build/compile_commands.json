@@ -1,6 +1,12 @@
 [
 {
   "directory": "C:/Users/pc/Documents/GitHub/CalendarApp/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe   -g -std=gnu++23 -o CMakeFiles\\CalendarApp.dir\\source\\Calendar.cpp.obj -c C:\\Users\\pc\\Documents\\GitHub\\CalendarApp\\source\\Calendar.cpp",
+  "file": "C:/Users/pc/Documents/GitHub/CalendarApp/source/Calendar.cpp",
+  "output": "CMakeFiles/CalendarApp.dir/source/Calendar.cpp.obj"
+},
+{
+  "directory": "C:/Users/pc/Documents/GitHub/CalendarApp/build",
   "command": "C:\\msys64\\ucrt64\\bin\\g++.exe   -g -std=gnu++23 -o CMakeFiles\\CalendarApp.dir\\source\\DateFile.cpp.obj -c C:\\Users\\pc\\Documents\\GitHub\\CalendarApp\\source\\DateFile.cpp",
   "file": "C:/Users/pc/Documents/GitHub/CalendarApp/source/DateFile.cpp",
   "output": "CMakeFiles/CalendarApp.dir/source/DateFile.cpp.obj"

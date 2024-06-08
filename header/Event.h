@@ -11,7 +11,8 @@ public:
 
     // Getters (and potentially setters) for subject, startTime, endTime
     std::string getSubject() const;
-    // ...
+    std::string getStartTime() const;  // Add these to the Event class
+    std::string getEndTime() const;
 
 private:
     std::string subject;
