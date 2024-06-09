@@ -1,6 +1,7 @@
+// source/FileHandler.cpp
 #include "../header/FileHandler.h"
+#include <fstream>
 #include <sstream>
-#include <algorithm> // For std::replace
 
 FileHandler::FileHandler(const std::string& filename) : filename(filename) {}
 
@@ -18,24 +19,28 @@ std::vector<Event> FileHandler::readEvents() {
     std::getline(file, line);
 
     while (std::getline(file, line)) {
-        std::istringstream iss(line);
-        std::string startDateStr, endDateStr, startTime, endTime, subject;
-
-        std::getline(iss, startDateStr, ',');
-        std::getline(iss, endDateStr, ',');
-        std::getline(iss, startTime, ',');
-        std::getline(iss, endTime, ',');
-        std::getline(iss, subject, ',');
-
-        // Convert date strings to Date objects (assuming you have a Date::fromString() method)
-        Date startDate = Date::fromString(startDateStr);
-        Date endDate = Date::fromString(endDateStr);
-
-        events.push_back(Event(subject, startDate.getYear(), startDate.getMonth(), startDate.getDay(),
-                                    startTime, endTime));
+        events.push_back(parseEvent(line));
     }
 
     file.close();
+
+    // Debugging: Print events read from the file
+    for (const auto& event : events) {
+        std::cout << "Read event: " << event.getSubject() << " on "
+                  << event.getDay() << "/" << event.getMonth() << "/" << event.getYear() << std::endl;
+    }
+
     return events;
 }
 
+Event FileHandler::parseEvent(const std::string& line) {
+    std::istringstream iss(line);
+    std::string startDateStr, subject;
+
+    std::getline(iss, startDateStr, ',');
+    std::getline(iss, subject, ',');
+
+    Date startDate = Date::fromString(startDateStr);
+
+    return Event(subject, startDate.getYear(), startDate.getMonth(), startDate.getDay());
+}
