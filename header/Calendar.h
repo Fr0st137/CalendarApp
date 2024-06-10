@@ -1,4 +1,3 @@
-// header/Calendar.h
 #ifndef CALENDAR_H
 #define CALENDAR_H
 
@@ -19,7 +18,8 @@ public:
     void printMonth(int year, int month);
     void addEventFromUser(const std::string& filename);
     void removeEventFromUser(const std::string& filename);
-    
+    void showHolidays();
+
     static int daysInMonth(int month, int year);
     void printEvents(int day, int year, int month);
 

@@ -201,5 +201,4 @@ CMakeFiles/CalendarApp.dir/source/FileHandler.cpp.obj: \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/regex_executor.h \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/regex_executor.tcc \
  C:/Users/pc/Documents/GitHub/CalendarApp/header/Event.h \
- C:/msys64/ucrt64/include/c++/13.2.0/iomanip \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/quoted_string.h
+ C:/Users/pc/Documents/GitHub/CalendarApp/header/Holidays.h

@@ -222,4 +222,5 @@ CMakeFiles/CalendarApp.dir/source/main.cpp.obj: \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/fstream.tcc \
  C:/Users/pc/Documents/GitHub/CalendarApp/header/DateFile.h \
  C:/Users/pc/Documents/GitHub/CalendarApp/header/Event.h \
- C:/Users/pc/Documents/GitHub/CalendarApp/header/FileHandler.h
+ C:/Users/pc/Documents/GitHub/CalendarApp/header/FileHandler.h \
+ C:/Users/pc/Documents/GitHub/CalendarApp/header/Holidays.h

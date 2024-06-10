@@ -1,4 +1,3 @@
-// source/main.cpp
 #include <iostream>
 #include <chrono>
 #include <ctime>
@@ -7,6 +6,7 @@
 #include "../header/DateFile.h"
 #include "../header/Event.h"
 #include "../header/FileHandler.h"
+#include "../header/Holidays.h"
 
 using namespace std;
 
@@ -34,12 +34,20 @@ void showAllEvents(Calendar& calendar) {
 }
 
 int main() {
-    FileHandler handler("../EventLog.csv");
-    vector<Event> events = handler.readEvents();
+    FileHandler eventHandler("../EventLog.csv");
+    vector<Event> events = eventHandler.readEvents();
+
+    FileHandler holidayHandler("../Holidays.csv");
+    vector<Holiday> holidays = holidayHandler.readHolidays();
+
     Calendar calendar;
 
     for (const Event& event : events) {
         calendar.addEvent(event);
+    }
+
+    for (const Holiday& holiday : holidays) {
+        calendar.addHoliday(holiday);
     }
 
     bool exit = false;
@@ -59,7 +67,7 @@ int main() {
             case 3:
                 cout << "Remove event" << endl;
                 calendar.removeEventFromUser("EventLog.csv");
-                events = handler.readEvents();
+                events = eventHandler.readEvents();
                 calendar = Calendar();
                 for (const Event& event : events) {
                     calendar.addEvent(event);
@@ -71,7 +79,7 @@ int main() {
                 break;
             case 5:
                 cout << "Show events" << endl;
-                events = handler.readEvents();
+                events = eventHandler.readEvents();
                 calendar = Calendar();
                 for (const Event& event : events) {
                     calendar.addEvent(event);
@@ -80,7 +88,7 @@ int main() {
                 break;
             case 6:
                 cout << "Show holidays" << endl;
-                // Add logic to show holidays
+                calendar.showHolidays();
                 break;
             case 7:
                 cout << "Exit" << endl;

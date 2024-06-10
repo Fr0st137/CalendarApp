@@ -1,4 +1,3 @@
-// source/Calendar.cpp
 #include "../header/Calendar.h"
 #include <algorithm>
 #include <iomanip>
@@ -60,6 +59,8 @@ void Calendar::printMonth(int year, int month) {
 
 void Calendar::printDay(int day, int year, int month) {
     bool hasEvent = false;
+    bool hasHoliday = false;
+
     for (const Event& event : events) {
         if (event.getYear() == year && event.getMonth() == month && event.getDay() == day) {
             hasEvent = true;
@@ -67,8 +68,17 @@ void Calendar::printDay(int day, int year, int month) {
         }
     }
 
+    for (const Holiday& holiday : holidays) {
+        if (holiday.getYear() == year && holiday.getMonth() == month && holiday.getDay() == day) {
+            hasHoliday = true;
+            break;
+        }
+    }
+
     if (hasEvent) {
         std::cout << "*";
+    } else if (hasHoliday) {
+        std::cout << "#";
     } else {
         std::cout << " ";
     }
@@ -77,6 +87,7 @@ void Calendar::printDay(int day, int year, int month) {
 
 void Calendar::printEvents(int day, int year, int month) {
     bool hasEvent = false;
+
     for (const Event& event : events) {
         if (event.getYear() == year && event.getMonth() == month && event.getDay() == day) {
             if (!hasEvent) {
@@ -90,6 +101,13 @@ void Calendar::printEvents(int day, int year, int month) {
     }
     if (hasEvent) {
         std::cout << std::endl;
+    }
+}
+
+void Calendar::showHolidays() {
+    std::cout << "Holidays:" << std::endl;
+    for (const Holiday& holiday : holidays) {
+        std::cout << holiday.toString() << ": " << holiday.getName() << std::endl;
     }
 }
 
