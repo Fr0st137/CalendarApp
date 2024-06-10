@@ -18,16 +18,17 @@ public:
     void printCurrentMonth();
     void printMonth(int year, int month);
     void addEventFromUser(const std::string& filename);
-    void removeEventFromUser(const std::string& filename); // New method to remove event from user
-
+    void removeEventFromUser(const std::string& filename);
+    
     static int daysInMonth(int month, int year);
+    void printEvents(int day, int year, int month);
 
 private:
     std::vector<Event> events;
     std::vector<Holiday> holidays;
     int getStartDay(int year, int month) const;
     void printDay(int day, int year, int month);
-    void printEvents(int day, int year, int month);
+    bool getDateFromUser(Date& date);
 };
 
 #endif // CALENDAR_H

@@ -1,4 +1,3 @@
-// source/Event.cpp
 #include "../header/Event.h"
 
 Event::Event(const std::string& subject, int year, int month, int day)

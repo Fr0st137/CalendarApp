@@ -72,6 +72,8 @@
         "string_view": "cpp",
         "numbers": "cpp",
         "span": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "bitset": "cpp",
+        "regex": "cpp"
     }
 }

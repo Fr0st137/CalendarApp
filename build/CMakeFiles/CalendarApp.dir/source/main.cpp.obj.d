@@ -188,15 +188,38 @@ CMakeFiles/CalendarApp.dir/source/main.cpp.obj: \
  C:/msys64/ucrt64/include/c++/13.2.0/span \
  C:/msys64/ucrt64/include/c++/13.2.0/variant \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/ranges_algobase.h \
- C:/Users/pc/Documents/GitHub/CalendarApp/header/DateFile.h \
+ C:/Users/pc/Documents/GitHub/CalendarApp/header/Calendar.h \
  C:/Users/pc/Documents/GitHub/CalendarApp/header/Event.h \
  C:/Users/pc/Documents/GitHub/CalendarApp/header/DateFile.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/regex \
+ C:/msys64/ucrt64/include/c++/13.2.0/bitset \
+ C:/msys64/ucrt64/include/c++/13.2.0/stack \
+ C:/msys64/ucrt64/include/c++/13.2.0/deque \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_deque.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/deque.tcc \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_stack.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/std_function.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_tree.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/node_handle.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_map.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/regex_constants.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/regex_error.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/regex_automaton.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/regex_automaton.tcc \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/regex_scanner.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/regex_scanner.tcc \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/regex_compiler.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/regex_compiler.tcc \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/regex.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/regex.tcc \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/regex_executor.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/regex_executor.tcc \
  C:/Users/pc/Documents/GitHub/CalendarApp/header/Holidays.h \
  C:/Users/pc/Documents/GitHub/CalendarApp/header/FileHandler.h \
  C:/msys64/ucrt64/include/c++/13.2.0/fstream \
  C:/msys64/ucrt64/include/c++/13.2.0/x86_64-w64-mingw32/bits/basic_file.h \
  C:/msys64/ucrt64/include/c++/13.2.0/x86_64-w64-mingw32/bits/c++io.h \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/fstream.tcc \
+ C:/Users/pc/Documents/GitHub/CalendarApp/header/DateFile.h \
  C:/Users/pc/Documents/GitHub/CalendarApp/header/Event.h \
- C:/Users/pc/Documents/GitHub/CalendarApp/header/Calendar.h \
  C:/Users/pc/Documents/GitHub/CalendarApp/header/FileHandler.h

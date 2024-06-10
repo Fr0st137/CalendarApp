@@ -1,0 +1,14 @@
+Start Date, Subject
+01/01, Nowy Rok
+06/01, Święto Trzech Króli
+31/03, Wielkanoc
+01/04, Poniedziałek Wielkanocny
+01/05, Święto Pracy
+03/05, Święto Konstytucji 3 Maja
+19/05, Zielone Świątki
+30/05, Boże Ciało
+15/08, Wniebowzięcie Najświętszej Maryi Panny
+01/11, Wszystkich Świętych
+11/11, Święto Niepodległości
+25/12, Pierwszy dzień Bożego Narodzenia
+26/12, Drugi dzień Bożego Narodzenia

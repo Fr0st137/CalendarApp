@@ -163,6 +163,43 @@ CMakeFiles/CalendarApp.dir/source/Calendar.cpp.obj: \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/sstream.tcc \
  C:/Users/pc/Documents/GitHub/CalendarApp/header/Event.h \
  C:/Users/pc/Documents/GitHub/CalendarApp/header/DateFile.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/regex \
+ C:/msys64/ucrt64/include/c++/13.2.0/bitset \
+ C:/msys64/ucrt64/include/c++/13.2.0/stack \
+ C:/msys64/ucrt64/include/c++/13.2.0/deque \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_deque.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/deque.tcc \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_stack.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/ext/aligned_buffer.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/shared_ptr.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/shared_ptr_base.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/allocated_ptr.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/unique_ptr.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/ext/concurrence.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/align.h \
+ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/stdint.h \
+ C:/msys64/ucrt64/include/stdint.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/std_function.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_algo.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/algorithmfwd.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_heap.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/uniform_int_dist.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_tempbuf.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_tree.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/node_handle.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_map.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/regex_constants.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/regex_error.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/regex_automaton.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/regex_automaton.tcc \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/regex_scanner.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/regex_scanner.tcc \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/regex_compiler.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/regex_compiler.tcc \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/regex.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/regex.tcc \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/regex_executor.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/regex_executor.tcc \
  C:/Users/pc/Documents/GitHub/CalendarApp/header/Holidays.h \
  C:/Users/pc/Documents/GitHub/CalendarApp/header/FileHandler.h \
  C:/msys64/ucrt64/include/c++/13.2.0/fstream \
@@ -170,11 +207,6 @@ CMakeFiles/CalendarApp.dir/source/Calendar.cpp.obj: \
  C:/msys64/ucrt64/include/c++/13.2.0/x86_64-w64-mingw32/bits/c++io.h \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/fstream.tcc \
  C:/msys64/ucrt64/include/c++/13.2.0/algorithm \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_algo.h \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/algorithmfwd.h \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_heap.h \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/uniform_int_dist.h \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_tempbuf.h \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/ranges_algo.h \
  C:/msys64/ucrt64/include/c++/13.2.0/optional \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/enable_special_members.h \

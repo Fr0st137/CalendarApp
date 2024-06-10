@@ -3,6 +3,8 @@
 #include "../header/Calendar.h"
 #include <iomanip>
 #include <ctime>
+#include <sstream>
+#include <regex>
 
 int currYear = 1900;
 int currMonth = 1;
@@ -50,15 +52,9 @@ int Date::daysUntil(const Date& other) const {
 
 std::string Date::toString() const {
     std::ostringstream oss;
-    oss << std::setfill('0') << std::setw(2) << month << "/"
-        << std::setw(2) << day << "/" << year;
+    oss << std::setfill('0') << std::setw(2) << day << "/"
+        << std::setw(2) << month << "/" << year;
     return oss.str();
-}
-
-Date Date::getCurrentDate() {
-    time_t now = time(0);
-    tm* localTime = localtime(&now);
-    return Date(1900 + localTime->tm_year, 1 + localTime->tm_mon, localTime->tm_mday);
 }
 
 Date Date::fromString(const std::string& dateStr) {
@@ -76,8 +72,19 @@ Date Date::fromString(const std::string& dateStr) {
     return Date(year, month, day);
 }
 
+Date Date::getCurrentDate() {
+    time_t now = time(0);
+    tm* localTime = localtime(&now);
+    return Date(1900 + localTime->tm_year, 1 + localTime->tm_mon, localTime->tm_mday);
+}
+
 bool Date::isLeapYear(int year) const {
     if (year % 4 != 0) return false;
     if (year % 100 != 0) return true;
     return year % 400 == 0;
+}
+
+bool Date::isValidDateFormat(const std::string& dateStr) {
+    std::regex datePattern(R"(\b\d{2}/\d{2}/\d{4}\b)");
+    return std::regex_match(dateStr, datePattern);
 }

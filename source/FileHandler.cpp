@@ -1,7 +1,7 @@
-// source/FileHandler.cpp
 #include "../header/FileHandler.h"
 #include <fstream>
 #include <sstream>
+#include <iomanip>
 
 FileHandler::FileHandler(const std::string& filename) : filename(filename) {}
 
@@ -26,8 +26,10 @@ std::vector<Event> FileHandler::readEvents() {
 
     // Debugging: Print events read from the file
     for (const auto& event : events) {
-        std::cout << "Read event: " << event.getSubject() << " on "
-                  << event.getDay() << "/" << event.getMonth() << "/" << event.getYear() << std::endl;
+        std::cout << event.getSubject() << " on "
+                  << std::setw(2) << std::setfill('0') << event.getDay() << "/"
+                  << std::setw(2) << std::setfill('0') << event.getMonth() << "/"
+                  << event.getYear() << std::endl;
     }
 
     return events;

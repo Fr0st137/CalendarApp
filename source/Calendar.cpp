@@ -1,6 +1,9 @@
 // source/Calendar.cpp
 #include "../header/Calendar.h"
-#include <algorithm> // Include this header for std::remove_if
+#include <algorithm>
+#include <iomanip>
+#include <iostream>
+#include <fstream>
 
 void Calendar::addEvent(const Event& event) {
     events.push_back(event);
@@ -13,7 +16,7 @@ void Calendar::addHoliday(const Holiday& holiday) {
 int Calendar::daysInMonth(int month, int year) {
     static const int daysInMonthArr[] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
     if (month == 2 && ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))) {
-        return 29;  // February in a leap year
+        return 29; // February in a leap year
     }
     return daysInMonthArr[month - 1];
 }
@@ -31,13 +34,13 @@ void Calendar::printCurrentMonth() {
 }
 
 void Calendar::printMonth(int year, int month) {
-    std::cout << "Calendar for " << month << "/" << year << std::endl;
+    std::cout << "Calendar for " << std::setfill('0') << std::setw(2) << month << "/"
+              << year << std::endl;
     std::cout << "Su Mo Tu We Th Fr Sa" << std::endl;
 
     int startDay = this->getStartDay(year, month);
     int numDays = this->daysInMonth(month, year);
 
-    // Print initial spaces for the first week
     for (int i = 0; i < startDay; ++i) {
         std::cout << "   ";
     }
@@ -50,7 +53,6 @@ void Calendar::printMonth(int year, int month) {
     }
     std::cout << std::endl;
 
-    // Print event details
     for (int currentDay = 1; currentDay <= numDays; ++currentDay) {
         printEvents(currentDay, year, month);
     }
@@ -70,7 +72,7 @@ void Calendar::printDay(int day, int year, int month) {
     } else {
         std::cout << " ";
     }
-    std::cout << std::setw(2) << day << " ";
+    std::cout << std::setw(2) << std::setfill('0') << day << " ";
 }
 
 void Calendar::printEvents(int day, int year, int month) {
@@ -78,7 +80,9 @@ void Calendar::printEvents(int day, int year, int month) {
     for (const Event& event : events) {
         if (event.getYear() == year && event.getMonth() == month && event.getDay() == day) {
             if (!hasEvent) {
-                std::cout << std::setw(2) << day << ": ";
+                std::cout << std::setw(2) << std::setfill('0') << day << "/"
+                          << std::setw(2) << std::setfill('0') << month << "/" 
+                          << year << ": ";
                 hasEvent = true;
             }
             std::cout << event.getSubject() << ", ";
@@ -89,26 +93,46 @@ void Calendar::printEvents(int day, int year, int month) {
     }
 }
 
+bool Calendar::getDateFromUser(Date& date) {
+    std::string dateStr;
+    std::cout << "Enter date (dd/mm/yyyy): ";
+    std::cin >> dateStr;
+
+    if (!Date::isValidDateFormat(dateStr)) {
+        std::cerr << "Error: Invalid date format. Please use dd/mm/yyyy format." << std::endl;
+        return false;
+    }
+
+    Date tempDate = Date::fromString(dateStr);
+    if (!tempDate.isValid()) {
+        std::cerr << "Error: Invalid date. Please enter a valid date." << std::endl;
+        return false;
+    }
+
+    date = tempDate;
+    return true;
+}
+
 void Calendar::addEventFromUser(const std::string& filename) {
     std::string subject;
-    int day, month, year;
+    Date eventDate;
 
     std::cout << "Enter event subject: ";
-    std::cin.ignore(); // Clear the newline left in the input buffer
+    std::cin.ignore();
     std::getline(std::cin, subject);
 
-    std::cout << "Enter event date (dd mm yyyy): ";
-    std::cin >> day >> month >> year;
+    if (!getDateFromUser(eventDate)) {
+        return;
+    }
 
-    Event newEvent(subject, year, month, day);
+    Event newEvent(subject, eventDate.getYear(), eventDate.getMonth(), eventDate.getDay());
     addEvent(newEvent);
 
-    // Save the event to the file
     std::ofstream file(filename, std::ios::app);
     if (file.is_open()) {
-        file << std::setfill('0') << std::setw(2) << day << "/"
-             << std::setw(2) << month << "/"
-             << year << ", "
+        file << std::setfill('0') << std::setw(2) << eventDate.getDay() << "/"
+             << std::setw(2) << eventDate.getMonth() << "/"
+             << eventDate.getYear() << ", "
              << subject << "\n";
         file.close();
     } else {
@@ -118,18 +142,18 @@ void Calendar::addEventFromUser(const std::string& filename) {
 
 void Calendar::removeEventFromUser(const std::string& filename) {
     std::string subject;
-    int day, month, year;
+    Date eventDate;
 
     std::cout << "Enter event subject to remove: ";
-    std::cin.ignore(); // Clear the newline left in the input buffer
+    std::cin.ignore();
     std::getline(std::cin, subject);
 
-    std::cout << "Enter event date to remove (dd mm yyyy): ";
-    std::cin >> day >> month >> year;
+    if (!getDateFromUser(eventDate)) {
+        return;
+    }
 
-    Event eventToRemove(subject, year, month, day);
+    Event eventToRemove(subject, eventDate.getYear(), eventDate.getMonth(), eventDate.getDay());
 
-    // Remove event from the events vector
     auto it = std::remove_if(events.begin(), events.end(),
                              [&eventToRemove](const Event& event) {
                                  return event.getSubject() == eventToRemove.getSubject() &&
@@ -141,13 +165,12 @@ void Calendar::removeEventFromUser(const std::string& filename) {
         events.erase(it, events.end());
     }
 
-    // Save the updated events list to the file
     FileHandler fileHandler(filename);
     std::vector<Event> updatedEvents = fileHandler.readEvents();
 
     std::ofstream file(filename);
     if (file.is_open()) {
-        file << "Start Date, Subject\n"; // Write header
+        file << "Start Date, Subject\n";
         for (const auto& event : updatedEvents) {
             if (!(event.getSubject() == eventToRemove.getSubject() &&
                   event.getDay() == eventToRemove.getDay() &&

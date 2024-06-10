@@ -3,9 +3,7 @@
 #define DATEFILE_H
 
 #include <string>
-#include <sstream>
-#include <stdexcept>
-#include <ctime> // for time functions
+#include <regex>
 
 class Date {
 public:
@@ -22,6 +20,8 @@ public:
     std::string toString() const;
     static Date getCurrentDate();
     static Date fromString(const std::string& dateStr);
+    static int daysInMonth(int month, int year);
+    static bool isValidDateFormat(const std::string& dateStr);
 
 private:
     int year;
