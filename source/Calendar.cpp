@@ -6,6 +6,9 @@
 #include <iostream>
 #include <fstream>
 #include <map>
+#include <fstream>
+#include <sstream>
+#include <string>
 
 const std::string GREEN = "\033[32m";
 const std::string RED = "\033[31m";
@@ -223,22 +226,33 @@ void Calendar::addEventFromUser(const std::string& filename) {
     }
 }
 
+// Helper function to trim leading and trailing spaces
+std::string trim(const std::string& str) {
+    size_t first = str.find_first_not_of(' ');
+    size_t last = str.find_last_not_of(' ');
+    return (first == std::string::npos || last == std::string::npos) ? "" : str.substr(first, last - first + 1);
+}
+
 void Calendar::removeEventFromUser(const std::string& filename) {
     std::string subject;
-
     std::cout << "Enter event subject to remove: ";
     std::cin.ignore();
     std::getline(std::cin, subject);
+    subject = trim(subject);
 
     auto it = std::remove_if(events.begin(), events.end(),
                              [&subject](const Event& event) {
-                                 return event.getSubject() == subject;
+                                 return trim(event.getSubject()) == subject;
                              });
 
     if (it != events.end()) {
         events.erase(it, events.end());
+    } else {
+        std::cerr << "Event not found." << std::endl;
+        return;
     }
 
+    // Update the EventLog.csv file
     std::vector<Event> updatedEvents;
     std::ifstream file_in(filename);
     std::string line;
@@ -251,12 +265,15 @@ void Calendar::removeEventFromUser(const std::string& filename) {
 
             if (dateStr.empty() || eventSubject.empty()) continue;
 
-            if (eventSubject != subject) {
+            if (trim(eventSubject) != subject) {
                 Date date = Date::fromString(dateStr);
                 updatedEvents.push_back(Event(eventSubject, date.getYear(), date.getMonth(), date.getDay()));
             }
         }
         file_in.close();
+    } else {
+        std::cerr << "Error: Could not open file to read the events." << std::endl;
+        return;
     }
 
     std::ofstream file_out(filename);
@@ -270,6 +287,7 @@ void Calendar::removeEventFromUser(const std::string& filename) {
         file_out.close();
     } else {
         std::cerr << "Error: Could not open file to save the updated events." << std::endl;
+        return;
     }
 }
 
