@@ -1,3 +1,5 @@
+// File: header/DateFile.h
+
 #ifndef DATEFILE_H
 #define DATEFILE_H
 
@@ -21,16 +23,12 @@ public:
     static Date fromString(const std::string& dateStr);
     static int daysInMonth(int month, int year);
     static bool isValidDateFormat(const std::string& dateStr);
+    static bool isLeapYear(int year); // Make this static
 
 private:
     int year;
     int month;
     int day;
-    bool isLeapYear(int year) const;
 };
-
-extern int currYear;
-extern int currMonth;
-extern int currDay;
 
 #endif // DATEFILE_H

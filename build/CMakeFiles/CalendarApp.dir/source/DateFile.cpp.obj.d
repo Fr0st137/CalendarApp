@@ -196,16 +196,5 @@ CMakeFiles/CalendarApp.dir/source/DateFile.cpp.obj: \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/regex.tcc \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/regex_executor.h \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/regex_executor.tcc \
- C:/Users/pc/Documents/GitHub/CalendarApp/header/Calendar.h \
- C:/msys64/ucrt64/include/c++/13.2.0/vector \
- C:/msys64/ucrt64/include/c++/13.2.0/iostream \
  C:/msys64/ucrt64/include/c++/13.2.0/iomanip \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/quoted_string.h \
- C:/Users/pc/Documents/GitHub/CalendarApp/header/Event.h \
- C:/Users/pc/Documents/GitHub/CalendarApp/header/DateFile.h \
- C:/Users/pc/Documents/GitHub/CalendarApp/header/Holidays.h \
- C:/Users/pc/Documents/GitHub/CalendarApp/header/FileHandler.h \
- C:/msys64/ucrt64/include/c++/13.2.0/fstream \
- C:/msys64/ucrt64/include/c++/13.2.0/x86_64-w64-mingw32/bits/basic_file.h \
- C:/msys64/ucrt64/include/c++/13.2.0/x86_64-w64-mingw32/bits/c++io.h \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/fstream.tcc
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/quoted_string.h

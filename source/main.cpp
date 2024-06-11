@@ -1,3 +1,5 @@
+// File: source/main.cpp
+
 #include <iostream>
 #include <chrono>
 #include <ctime>
@@ -25,10 +27,10 @@ void displayMenu() {
     cout << "7. Exit" << endl;
 }
 
-void showAllEvents(Calendar& calendar) {
+void showAllEvents(Calendar& calendar, int year) {
     for (int month = 1; month <= 12; ++month) {
         for (int day = 1; day <= 31; ++day) {
-            calendar.printEvents(day, currYear, month);
+            calendar.printEvents(day, year, month);
         }
     }
 }
@@ -84,7 +86,7 @@ int main() {
                 for (const Event& event : events) {
                     calendar.addEvent(event);
                 }
-                showAllEvents(calendar);
+                showAllEvents(calendar, Date::getCurrentDate().getYear());
                 break;
             case 6:
                 cout << "Show holidays" << endl;
@@ -99,5 +101,6 @@ int main() {
                 break;
         }
     }
+
     return 0;
 }

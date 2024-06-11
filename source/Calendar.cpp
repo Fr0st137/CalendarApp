@@ -1,3 +1,5 @@
+// File: source/Calendar.cpp
+
 #include "../header/Calendar.h"
 #include <algorithm>
 #include <iomanip>
@@ -14,6 +16,7 @@ void Calendar::addHoliday(const Holiday& holiday) {
 
 int Calendar::daysInMonth(int month, int year) {
     static const int daysInMonthArr[] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+
     if (month == 2 && ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))) {
         return 29; // February in a leap year
     }
@@ -92,7 +95,7 @@ void Calendar::printEvents(int day, int year, int month) {
         if (event.getYear() == year && event.getMonth() == month && event.getDay() == day) {
             if (!hasEvent) {
                 std::cout << std::setw(2) << std::setfill('0') << day << "/"
-                          << std::setw(2) << std::setfill('0') << month << "/" 
+                          << std::setw(2) << std::setfill('0') << month << "/"
                           << year << ": ";
                 hasEvent = true;
             }
@@ -105,9 +108,12 @@ void Calendar::printEvents(int day, int year, int month) {
 }
 
 void Calendar::showHolidays() {
-    std::cout << "Holidays:" << std::endl;
+    std::cout << "Start Date,Subject" << std::endl;
     for (const Holiday& holiday : holidays) {
-        std::cout << holiday.toString() << ": " << holiday.getName() << std::endl;
+        std::cout << std::setfill('0') << std::setw(2) << holiday.getDay() << "/"
+                  << std::setw(2) << holiday.getMonth() << "/"
+                  << holiday.getYear() << ","
+                  << holiday.getName() << std::endl;
     }
 }
 
@@ -150,7 +156,7 @@ void Calendar::addEventFromUser(const std::string& filename) {
     if (file.is_open()) {
         file << std::setfill('0') << std::setw(2) << eventDate.getDay() << "/"
              << std::setw(2) << eventDate.getMonth() << "/"
-             << eventDate.getYear() << ", "
+             << eventDate.getYear() << ","
              << subject << "\n";
         file.close();
     } else {
@@ -196,7 +202,7 @@ void Calendar::removeEventFromUser(const std::string& filename) {
                   event.getYear() == eventToRemove.getYear())) {
                 file << std::setfill('0') << std::setw(2) << event.getDay() << "/"
                      << std::setw(2) << event.getMonth() << "/"
-                     << event.getYear() << ", "
+                     << event.getYear() << ","
                      << event.getSubject() << "\n";
             }
         }

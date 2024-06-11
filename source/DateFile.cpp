@@ -1,32 +1,18 @@
+// File: source/DateFile.cpp
+
 #include "../header/DateFile.h"
-#include "../header/Calendar.h"
 #include <iomanip>
 #include <ctime>
 #include <sstream>
 #include <regex>
 
-int currYear = 1900;
-int currMonth = 1;
-int currDay = 1;
-
 Date::Date(int year, int month, int day) {
     time_t now = time(0);
     tm* localTime = localtime(&now);
-    if (year == 1900) {
-        this->year = 1900 + localTime->tm_year;
-    } else {
-        this->year = year;
-    }
-    if (month == 1) {
-        this->month = 1 + localTime->tm_mon;
-    } else {
-        this->month = month;
-    }
-    if (day == 1) {
-        this->day = localTime->tm_mday;
-    } else {
-        this->day = day;
-    }
+
+    this->year = (year != 1900) ? year : (1900 + localTime->tm_year);
+    this->month = (month != 1) ? month : (1 + localTime->tm_mon); 
+    this->day = (day != 1) ? day : localTime->tm_mday;
 }
 
 bool Date::operator<(const Date& other) const {
@@ -37,7 +23,7 @@ bool Date::operator<(const Date& other) const {
 
 bool Date::isValid() const {
     if (month < 1 || month > 12) return false;
-    if (day < 1 || day > Calendar::daysInMonth(month, year)) return false;
+    if (day < 1 || day > daysInMonth(month, year)) return false;
     return true;
 }
 
@@ -52,7 +38,7 @@ int Date::daysUntil(const Date& other) const {
 std::string Date::toString() const {
     std::ostringstream oss;
     oss << std::setfill('0') << std::setw(2) << day << "/"
-        << std::setw(2) << month << "/" << year;
+        << std::setfill('0') << std::setw(2) << month << "/" << year;
     return oss.str();
 }
 
@@ -77,7 +63,7 @@ Date Date::getCurrentDate() {
     return Date(1900 + localTime->tm_year, 1 + localTime->tm_mon, localTime->tm_mday);
 }
 
-bool Date::isLeapYear(int year) const {
+bool Date::isLeapYear(int year) {
     if (year % 4 != 0) return false;
     if (year % 100 != 0) return true;
     return year % 400 == 0;
@@ -86,4 +72,13 @@ bool Date::isLeapYear(int year) const {
 bool Date::isValidDateFormat(const std::string& dateStr) {
     std::regex datePattern(R"(\b\d{2}/\d{2}/\d{4}\b)");
     return std::regex_match(dateStr, datePattern);
+}
+
+int Date::daysInMonth(int month, int year) {
+    static const int daysInMonthArr[] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+
+    if (month == 2 && isLeapYear(year)) {
+        return 29; // February in a leap year
+    }
+    return daysInMonthArr[month - 1];
 }

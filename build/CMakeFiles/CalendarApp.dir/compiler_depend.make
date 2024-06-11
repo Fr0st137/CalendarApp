@@ -224,11 +224,7 @@ CMakeFiles/CalendarApp.dir/source/Calendar.cpp.obj: C:/Users/pc/Documents/GitHub
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/syslimits.h
 
 CMakeFiles/CalendarApp.dir/source/DateFile.cpp.obj: C:/Users/pc/Documents/GitHub/CalendarApp/source/DateFile.cpp \
-  C:/Users/pc/Documents/GitHub/CalendarApp/header/Calendar.h \
   C:/Users/pc/Documents/GitHub/CalendarApp/header/DateFile.h \
-  C:/Users/pc/Documents/GitHub/CalendarApp/header/Event.h \
-  C:/Users/pc/Documents/GitHub/CalendarApp/header/FileHandler.h \
-  C:/Users/pc/Documents/GitHub/CalendarApp/header/Holidays.h \
   C:/msys64/ucrt64/include/_mingw.h \
   C:/msys64/ucrt64/include/_mingw_mac.h \
   C:/msys64/ucrt64/include/_mingw_off_t.h \
@@ -257,7 +253,6 @@ CMakeFiles/CalendarApp.dir/source/DateFile.cpp.obj: C:/Users/pc/Documents/GitHub
   C:/msys64/ucrt64/include/c++/13.2.0/bits/exception.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/exception_defines.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/exception_ptr.h \
-  C:/msys64/ucrt64/include/c++/13.2.0/bits/fstream.tcc \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/functexcept.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/functional_hash.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/hash_bytes.h \
@@ -359,12 +354,10 @@ CMakeFiles/CalendarApp.dir/source/DateFile.cpp.obj: C:/Users/pc/Documents/GitHub
   C:/msys64/ucrt64/include/c++/13.2.0/ext/numeric_traits.h \
   C:/msys64/ucrt64/include/c++/13.2.0/ext/string_conversions.h \
   C:/msys64/ucrt64/include/c++/13.2.0/ext/type_traits.h \
-  C:/msys64/ucrt64/include/c++/13.2.0/fstream \
   C:/msys64/ucrt64/include/c++/13.2.0/initializer_list \
   C:/msys64/ucrt64/include/c++/13.2.0/iomanip \
   C:/msys64/ucrt64/include/c++/13.2.0/ios \
   C:/msys64/ucrt64/include/c++/13.2.0/iosfwd \
-  C:/msys64/ucrt64/include/c++/13.2.0/iostream \
   C:/msys64/ucrt64/include/c++/13.2.0/istream \
   C:/msys64/ucrt64/include/c++/13.2.0/locale \
   C:/msys64/ucrt64/include/c++/13.2.0/new \
@@ -383,12 +376,9 @@ CMakeFiles/CalendarApp.dir/source/DateFile.cpp.obj: C:/Users/pc/Documents/GitHub
   C:/msys64/ucrt64/include/c++/13.2.0/tuple \
   C:/msys64/ucrt64/include/c++/13.2.0/type_traits \
   C:/msys64/ucrt64/include/c++/13.2.0/typeinfo \
-  C:/msys64/ucrt64/include/c++/13.2.0/vector \
   C:/msys64/ucrt64/include/c++/13.2.0/x86_64-w64-mingw32/bits/atomic_word.h \
-  C:/msys64/ucrt64/include/c++/13.2.0/x86_64-w64-mingw32/bits/basic_file.h \
   C:/msys64/ucrt64/include/c++/13.2.0/x86_64-w64-mingw32/bits/c++allocator.h \
   C:/msys64/ucrt64/include/c++/13.2.0/x86_64-w64-mingw32/bits/c++config.h \
-  C:/msys64/ucrt64/include/c++/13.2.0/x86_64-w64-mingw32/bits/c++io.h \
   C:/msys64/ucrt64/include/c++/13.2.0/x86_64-w64-mingw32/bits/c++locale.h \
   C:/msys64/ucrt64/include/c++/13.2.0/x86_64-w64-mingw32/bits/cpu_defines.h \
   C:/msys64/ucrt64/include/c++/13.2.0/x86_64-w64-mingw32/bits/ctype_base.h \
@@ -703,6 +693,7 @@ CMakeFiles/CalendarApp.dir/source/FileHandler.cpp.obj: C:/Users/pc/Documents/Git
   C:/msys64/ucrt64/include/c++/13.2.0/bits/postypes.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/predefined_ops.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/ptr_traits.h \
+  C:/msys64/ucrt64/include/c++/13.2.0/bits/quoted_string.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/range_access.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/ranges_base.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/ranges_cmp.h \
@@ -778,6 +769,7 @@ CMakeFiles/CalendarApp.dir/source/FileHandler.cpp.obj: C:/Users/pc/Documents/Git
   C:/msys64/ucrt64/include/c++/13.2.0/ext/type_traits.h \
   C:/msys64/ucrt64/include/c++/13.2.0/fstream \
   C:/msys64/ucrt64/include/c++/13.2.0/initializer_list \
+  C:/msys64/ucrt64/include/c++/13.2.0/iomanip \
   C:/msys64/ucrt64/include/c++/13.2.0/ios \
   C:/msys64/ucrt64/include/c++/13.2.0/iosfwd \
   C:/msys64/ucrt64/include/c++/13.2.0/iostream \
