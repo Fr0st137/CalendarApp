@@ -5,13 +5,11 @@
 #include <ctime>
 #include <sstream>
 #include <regex>
+#include <iostream>
 
 Date::Date(int year, int month, int day) {
-    time_t now = time(0);
-    tm* localTime = localtime(&now);
-
     this->year = year;
-    this->month = month; 
+    this->month = month;
     this->day = day;
 }
 
@@ -28,8 +26,8 @@ bool Date::isValid() const {
 }
 
 int Date::daysUntil(const Date& other) const {
-    tm thisDate = { 0, 0, 0, day, month - 1, year - 1900 };
-    tm otherDate = { 0, 0, 0, other.day, other.month - 1, other.year - 1900 };
+    tm thisDate = {0, 0, 0, day, month - 1, year - 1900};
+    tm otherDate = {0, 0, 0, other.day, other.month - 1, other.year - 1900};
     time_t thisTime = mktime(&thisDate);
     time_t otherTime = mktime(&otherDate);
     return static_cast<int>(difftime(otherTime, thisTime) / (60 * 60 * 24));
@@ -50,11 +48,24 @@ Date Date::fromString(const std::string& dateStr) {
     std::getline(iss, monthStr, '/');
     std::getline(iss, yearStr, '/');
 
-    int day = std::stoi(dayStr);
-    int month = std::stoi(monthStr);
-    int year = std::stoi(yearStr);
+    if (dayStr.empty() || monthStr.empty() || yearStr.empty()) {
+        std::cerr << "Error: Invalid date string format in fromString: " << dateStr << std::endl;
+        return Date(); // Return a default date
+    }
 
-    return Date(year, month, day);
+    try {
+        int day = std::stoi(dayStr);
+        int month = std::stoi(monthStr);
+        int year = std::stoi(yearStr);
+
+        return Date(year, month, day);
+    } catch (const std::invalid_argument& e) {
+        std::cerr << "Error: Invalid date string format in fromString: " << dateStr << std::endl;
+        return Date(); // Return a default date
+    } catch (const std::out_of_range& e) {
+        std::cerr << "Error: Date string out of range in fromString: " << dateStr << std::endl;
+        return Date(); // Return a default date
+    }
 }
 
 Date Date::getCurrentDate() {
@@ -75,10 +86,10 @@ bool Date::isValidDateFormat(const std::string& dateStr) {
 }
 
 int Date::daysInMonth(int month, int year) {
-    static const int daysInMonthArr[] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+    static const int daysInMonthArr[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
     if (month == 2 && isLeapYear(year)) {
-        return 29; // February in a leap year
+        return 29;
     }
     return daysInMonthArr[month - 1];
 }

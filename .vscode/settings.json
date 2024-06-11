@@ -75,6 +75,7 @@
         "variant": "cpp",
         "bitset": "cpp",
         "regex": "cpp",
-        "codecvt": "cpp"
+        "codecvt": "cpp",
+        "map": "cpp"
     }
 }

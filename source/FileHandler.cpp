@@ -1,5 +1,4 @@
 // File: source/FileHandler.cpp
-
 #include "../header/FileHandler.h"
 #include <iomanip>
 
@@ -15,10 +14,10 @@ std::vector<Event> FileHandler::readEvents() {
         return events;
     }
 
-    // Skip header row
-    std::getline(file, line);
+    std::getline(file, line); // Skip the header row
 
     while (std::getline(file, line)) {
+        if (line.empty()) continue;
         events.push_back(parseEvent(line));
     }
 
@@ -36,10 +35,10 @@ std::vector<Holiday> FileHandler::readHolidays() {
         return holidays;
     }
 
-    // Skip header row
-    std::getline(file, line);
+    std::getline(file, line); // Skip the header row
 
     while (std::getline(file, line)) {
+        if (line.empty()) continue;
         holidays.push_back(parseHoliday(line));
     }
 
@@ -55,7 +54,6 @@ Event FileHandler::parseEvent(const std::string& line) {
     std::getline(iss, subject, ',');
 
     Date startDate = Date::fromString(startDateStr);
-
     return Event(subject, startDate.getYear(), startDate.getMonth(), startDate.getDay());
 }
 
@@ -63,16 +61,9 @@ Holiday FileHandler::parseHoliday(const std::string& line) {
     std::istringstream iss(line);
     std::string dateStr, name;
 
-    std::getline(iss, dateStr, ','); // Read until the comma
-    std::getline(iss, name);         // Read the rest of the line (holiday name)
+    std::getline(iss, dateStr, ',');
+    std::getline(iss, name);
 
     Date startDate = Date::fromString(dateStr);
-
-    // Ensure the date is formatted as dd/mm/yyyy
-    std::ostringstream formattedDate;
-    formattedDate << std::setfill('0') << std::setw(2) << startDate.getDay() << "/"
-                  << std::setfill('0') << std::setw(2) << startDate.getMonth() << "/"
-                  << startDate.getYear();
-
     return Holiday(name, startDate.getYear(), startDate.getMonth(), startDate.getDay());
 }
