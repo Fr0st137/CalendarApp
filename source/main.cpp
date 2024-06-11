@@ -4,6 +4,7 @@
 #include <chrono>
 #include <ctime>
 #include <iomanip>
+#include <limits> // For input validation
 #include "../header/Calendar.h"
 #include "../header/DateFile.h"
 #include "../header/Event.h"
@@ -14,23 +15,22 @@ using namespace std;
 
 void displayMenu() {
     Date currentDate = Date::getCurrentDate();
-    cout << "Today is: " << setw(2) << setfill('0') << currentDate.getDay() << "."
+    cout << "\nToday is: " << setw(2) << setfill('0') << currentDate.getDay() << "."
          << setw(2) << setfill('0') << currentDate.getMonth() << "."
          << currentDate.getYear() << endl;
-    cout << "Enter a number between 1 and 8 to choose what you want to do:" << endl;
+    cout << "Enter a number between 1 and 7 to choose what you want to do:" << endl;
     cout << "1. Display calendar" << endl;
     cout << "2. Add event" << endl;
     cout << "3. Remove event" << endl;
-    cout << "4. Add holiday" << endl;
-    cout << "5. Show events" << endl;
-    cout << "6. Show holidays" << endl;
-    cout << "7. Exit" << endl;
+    cout << "4. Show events" << endl; 
+    cout << "5. Show holidays" << endl;
+    cout << "6. Exit" << endl;
 }
 
 void showAllEvents(Calendar& calendar, int year) {
     for (int month = 1; month <= 12; ++month) {
         for (int day = 1; day <= 31; ++day) {
-            calendar.printEvents(day, year, month);
+            calendar.printEvents(day, month, year); // Switched year and month for consistency
         }
     }
 }
@@ -55,44 +55,47 @@ int main() {
     bool exit = false;
     while (!exit) {
         displayMenu();
-        int choice;
-        cin >> choice;
 
-        switch (choice) {
+        int choice;
+        // Input validation loop
+        while (!(cin >> choice) || choice < 1 || choice > 6) {
+            cout << "Invalid input. Please enter a number between 1 and 6: ";
+            cin.clear(); // Clear error flags
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Discard invalid input
+        } 
+
+        switch (choice) { 
             case 1:
                 calendar.printCurrentMonth();
                 break;
             case 2:
-                cout << "Add event" << endl;
+                cout << "\nAdd event:\n";
                 calendar.addEventFromUser("EventLog.csv");
                 break;
             case 3:
-                cout << "Remove event" << endl;
-                calendar.removeEventFromUser("EventLog.csv");
+                cout << "\nRemove event:\n";
+                calendar.removeEventFromUser("EventLog.csv"); 
+                // Refresh events after removing
                 events = eventHandler.readEvents();
-                calendar = Calendar();
+                calendar = Calendar(); // Reset calendar
                 for (const Event& event : events) {
                     calendar.addEvent(event);
-                }
+                }               
                 break;
             case 4:
-                cout << "Add holiday" << endl;
-                // Add logic to add holiday
-                break;
-            case 5:
-                cout << "Show events" << endl;
+                cout << "\nShow events:\n";
                 events = eventHandler.readEvents();
-                calendar = Calendar();
+                calendar = Calendar();  // Reset calendar
                 for (const Event& event : events) {
                     calendar.addEvent(event);
                 }
                 showAllEvents(calendar, Date::getCurrentDate().getYear());
                 break;
-            case 6:
-                cout << "Show holidays" << endl;
+            case 5:
+                cout << "\nShow holidays:\n";
                 calendar.showHolidays();
                 break;
-            case 7:
+            case 6:
                 cout << "Exit" << endl;
                 exit = true;
                 break;

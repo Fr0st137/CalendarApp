@@ -10,9 +10,9 @@ Date::Date(int year, int month, int day) {
     time_t now = time(0);
     tm* localTime = localtime(&now);
 
-    this->year = (year != 1900) ? year : (1900 + localTime->tm_year);
-    this->month = (month != 1) ? month : (1 + localTime->tm_mon); 
-    this->day = (day != 1) ? day : localTime->tm_mday;
+    this->year = year;
+    this->month = month; 
+    this->day = day;
 }
 
 bool Date::operator<(const Date& other) const {
