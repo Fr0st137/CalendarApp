@@ -1,26 +1,26 @@
 // File: source/Calendar.cpp
 
 #include "../header/Calendar.h"
-#include <algorithm>
-#include <iomanip>
-#include <iostream>
-#include <fstream>
-#include <map>
-#include <fstream>
-#include <sstream>
-#include <string>
+#include <algorithm>  // For using std::remove_if
+#include <iomanip>    // For manipulating the output of C++ streams
+#include <iostream>   // For input and output stream
+#include <fstream>    // For file stream
+#include <map>        // For using std::map
+#include <sstream>    // For string stream
+#include <string>     // For using std::string
 
+// Define color codes for terminal output
 const std::string GREEN = "\033[32m";
 const std::string RED = "\033[31m";
 const std::string ORANGE = "\033[33m";
 const std::string RESET = "\033[0m";
 
 void Calendar::addEvent(const Event& event) {
-    events.push_back(event);
+    events.push_back(event); // Add an event to the events vector
 }
 
 void Calendar::addHoliday(const Holiday& holiday) {
-    holidays.push_back(holiday);
+    holidays.push_back(holiday); // Add a holiday to the holidays vector
 }
 
 int Calendar::daysInMonth(int month, int year) {
@@ -28,20 +28,20 @@ int Calendar::daysInMonth(int month, int year) {
     if (month == 2 && ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))) {
         return 29; // February in a leap year
     }
-    return daysInMonthArr[month - 1];
+    return daysInMonthArr[month - 1]; // Return days in the given month
 }
 
 int Calendar::getStartDay(int year, int month) const {
     tm time_in = { 0, 0, 0, 1, month - 1, year - 1900 };
     time_t time_temp = mktime(&time_in);
     const tm* time_out = localtime(&time_temp);
-    return time_out->tm_wday;
+    return time_out->tm_wday; // Get the start day of the month
 }
 
 void Calendar::printCurrentMonth() {
     Date currentDate = Date::getCurrentDate();
     printMonth(currentDate.getYear(), currentDate.getMonth());
-    showHolidaysForMonth(currentDate.getYear(), currentDate.getMonth());
+    showHolidaysForMonth(currentDate.getYear(), currentDate.getMonth()); // Print current month and holidays
 }
 
 void Calendar::printMonth(int year, int month) {
@@ -52,7 +52,7 @@ void Calendar::printMonth(int year, int month) {
     int numDays = this->daysInMonth(month, year);
 
     for (int i = 0; i < startDay; ++i) {
-        std::cout << "   ";
+        std::cout << "   "; // Print spaces for the start day
     }
 
     for (int currentDay = 1; currentDay <= numDays; ++currentDay) {
@@ -62,14 +62,14 @@ void Calendar::printMonth(int year, int month) {
         for (const Event& event : events) {
             if (event.getYear() == year && event.getMonth() == month && event.getDay() == currentDay) {
                 hasEvent = true;
-                break;
+                break; // Check if the current day has an event
             }
         }
 
         for (const Holiday& holiday : holidays) {
             if (holiday.getYear() == year && holiday.getMonth() == month && holiday.getDay() == currentDay) {
                 hasHoliday = true;
-                break;
+                break; // Check if the current day has a holiday
             }
         }
 
@@ -84,13 +84,13 @@ void Calendar::printMonth(int year, int month) {
         }
         
         if ((startDay + currentDay) % 7 == 0) {
-            std::cout << std::endl;
+            std::cout << std::endl; // Print a new line after every week
         }
     }
     std::cout << std::endl;
 
     for (int currentDay = 1; currentDay <= numDays; ++currentDay) {
-        printEvents(currentDay, year, month);
+        printEvents(currentDay, year, month); // Print events for each day
     }
 }
 
@@ -103,9 +103,9 @@ void Calendar::printMonthByName(int year, const std::string& monthName) {
     auto it = monthMap.find(monthName);
     if (it != monthMap.end()) {
         printMonth(year, it->second);
-        showHolidaysForMonth(year, it->second);
+        showHolidaysForMonth(year, it->second); // Print the specified month and holidays
     } else {
-        std::cerr << "Invalid month name: " << monthName << std::endl;
+        std::cerr << "Invalid month name: " << monthName << std::endl; // Error if month name is invalid
     }
 }
 
@@ -116,14 +116,14 @@ void Calendar::printDay(int day, int year, int month) {
     for (const Event& event : events) {
         if (event.getYear() == year && event.getMonth() == month && event.getDay() == day) {
             hasEvent = true;
-            break;
+            break; // Check if the day has an event
         }
     }
 
     for (const Holiday& holiday : holidays) {
         if (holiday.getYear() == year && holiday.getMonth() == month && holiday.getDay() == day) {
             hasHoliday = true;
-            break;
+            break; // Check if the day has a holiday
         }
     }
 
@@ -153,7 +153,7 @@ void Calendar::printEvents(int day, int year, int month) {
         }
     }
     if (hasEvent) {
-        std::cout << std::endl;
+        std::cout << std::endl; // Print events for a specific day
     }
 }
 
@@ -163,7 +163,7 @@ void Calendar::showHolidays() {
         std::cout << std::setfill('0') << std::setw(2) << holiday.getDay() << "/"
                   << std::setfill('0') << std::setw(2) << holiday.getMonth() << "/"
                   << holiday.getYear() << ","
-                  << holiday.getName() << std::endl;
+                  << holiday.getName() << std::endl; // Display all holidays
     }
 }
 
@@ -174,7 +174,7 @@ void Calendar::showHolidaysForMonth(int year, int month) {
             std::cout << std::setfill('0') << std::setw(2) << holiday.getDay() << "/"
                       << std::setfill('0') << std::setw(2) << holiday.getMonth() << "/"
                       << holiday.getYear() << " - "
-                      << holiday.getName() << std::endl;
+                      << holiday.getName() << std::endl; // Display holidays for a specific month
         }
     }
 }
@@ -186,17 +186,17 @@ bool Calendar::getDateFromUser(Date& date) {
 
     if (!Date::isValidDateFormat(dateStr)) {
         std::cerr << "Error: Invalid date format. Please use dd/mm/yyyy format." << std::endl;
-        return false;
+        return false; // Validate date format
     }
 
     Date tempDate = Date::fromString(dateStr);
     if (!tempDate.isValid()) {
         std::cerr << "Error: Invalid date. Please enter a valid date." << std::endl;
-        return false;
+        return false; // Check if the date is valid
     }
 
     date = tempDate;
-    return true;
+    return true; // Get date from user input
 }
 
 void Calendar::addEventFromUser(const std::string& filename) {
@@ -208,7 +208,7 @@ void Calendar::addEventFromUser(const std::string& filename) {
     std::getline(std::cin, subject);
 
     if (!getDateFromUser(eventDate)) {
-        return;
+        return; // Add event from user input
     }
 
     Event newEvent(subject, eventDate.getYear(), eventDate.getMonth(), eventDate.getDay());
@@ -222,7 +222,7 @@ void Calendar::addEventFromUser(const std::string& filename) {
              << subject << "\n";
         file.close();
     } else {
-        std::cerr << "Error: Could not open file to save the event." << std::endl;
+        std::cerr << "Error: Could not open file to save the event." << std::endl; // Save event to file
     }
 }
 
@@ -249,7 +249,7 @@ void Calendar::removeEventFromUser(const std::string& filename) {
         events.erase(it, events.end());
     } else {
         std::cerr << "Event not found." << std::endl;
-        return;
+        return; // Remove event based on user input
     }
 
     // Update the EventLog.csv file
@@ -287,14 +287,14 @@ void Calendar::removeEventFromUser(const std::string& filename) {
         file_out.close();
     } else {
         std::cerr << "Error: Could not open file to save the updated events." << std::endl;
-        return;
+        return; // Update the events file after removal
     }
 }
 
 void Calendar::showAllEvents(int year) {
     for (int month = 1; month <= 12; ++month) {
         for (int day = 1; day <= daysInMonth(month, year); ++day) {
-            printEvents(day, year, month);
+            printEvents(day, year, month); // Show all events for a specific year
         }
     }
 }

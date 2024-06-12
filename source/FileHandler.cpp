@@ -1,17 +1,19 @@
 // File: source/FileHandler.cpp
+
 #include "../header/FileHandler.h"
-#include <iomanip>
+#include <iomanip>  // For manipulating the output of C++ streams
 
 FileHandler::FileHandler(const std::string& filename) : filename(filename) {}
 
 std::vector<Event> FileHandler::readEvents() {
     std::ifstream file(filename);
     std::string line;
+
     std::vector<Event> events;
 
     if (!file.is_open()) {
         std::cerr << "Error: Could not open file " << filename << std::endl;
-        return events;
+        return events; // Read events from file
     }
 
     std::getline(file, line); // Skip the header row
@@ -32,7 +34,7 @@ std::vector<Holiday> FileHandler::readHolidays() {
 
     if (!file.is_open()) {
         std::cerr << "Error: Could not open file " << filename << std::endl;
-        return holidays;
+        return holidays; // Read holidays from file
     }
 
     std::getline(file, line); // Skip the header row
@@ -54,7 +56,7 @@ Event FileHandler::parseEvent(const std::string& line) {
     std::getline(iss, subject, ',');
 
     Date startDate = Date::fromString(startDateStr);
-    return Event(subject, startDate.getYear(), startDate.getMonth(), startDate.getDay());
+    return Event(subject, startDate.getYear(), startDate.getMonth(), startDate.getDay()); // Parse event from string line
 }
 
 Holiday FileHandler::parseHoliday(const std::string& line) {
@@ -65,5 +67,5 @@ Holiday FileHandler::parseHoliday(const std::string& line) {
     std::getline(iss, name);
 
     Date startDate = Date::fromString(dateStr);
-    return Holiday(name, startDate.getYear(), startDate.getMonth(), startDate.getDay());
+    return Holiday(name, startDate.getYear(), startDate.getMonth(), startDate.getDay()); // Parse holiday from string line
 }
